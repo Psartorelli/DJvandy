@@ -1,5 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+    <!-- Botão flutuante do WhatsApp com efeito -->
+<a href="https://wa.me/5514991989428"
+   class="whatsapp-float"
+   target="_blank"
+   aria-label="Converse conosco no WhatsApp">
+  <img src="whats.png" alt="WhatsApp" />
+</a>
+
+<style>
+  .whatsapp-float {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    width: 60px;
+    height: 60px;
+    animation: pulse 2s infinite;
+  }
+
+  .whatsapp-float img {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+  }
+
+  .whatsapp-float:hover img {
+    transform: scale(1.1);
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+    }
+    70% {
+      transform: scale(1.05);
+      box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+      transform: scale(1);
+      box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+  }
+</style>
+<!--fim do script flutuante do WhatsApp com efeito -->
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1242,44 +1289,6 @@
             }
         }
 
-        /* Botão flutuante do WhatsApp com efeito */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-            width: 60px;
-            height: 60px;
-            animation: pulse 2s infinite;
-        }
-
-        .whatsapp-float img {
-            width: 100%;
-            height: auto;
-            border-radius: 50%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .whatsapp-float:hover img {
-            transform: scale(1.1);
-        }
-
-        @keyframes pulse {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-            }
-            70% {
-                transform: scale(1.05);
-                box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-            }
-        }
-
         /* Responsividade */
         @media (max-width: 992px) {
             .about-content {
@@ -1683,7 +1692,7 @@
                             <div class="info">
                                 <h4>WhatsApp</h4>
                                 <p>Resposta rápida e direta - Clique abaixo para conversar</p>
-                                <a href="https://wa.me/5514991014086?text=Olá! Gostaria de mais informações sobre seus serviços de DJ." class="btn-whatsapp" target="_blank">
+                                <a href="https://wa.me/5511999999999?text=Olá! Gostaria de mais informações sobre seus serviços de DJ." class="btn-whatsapp" target="_blank">
                                     <i class="fab fa-whatsapp"></i> Enviar Mensagem no WhatsApp
                                 </a>
                             </div>
@@ -1694,7 +1703,7 @@
                                 <i class="fas fa-phone"></i>
                                 <div class="info">
                                     <h4>Telefone</h4>
-                                    <p>(14) 99101-4086</p>
+                                    <p>(11) 99999-9999</p>
                                 </div>
                             </div>
                             
@@ -1718,7 +1727,7 @@
                                 <i class="fas fa-map-marker-alt"></i>
                                 <div class="info">
                                     <h4>Localização</h4>
-                                    <p>São Manuel e Região</p>
+                                    <p>São Paulo e Região</p>
                                 </div>
                             </div>
                         </div>
@@ -1758,9 +1767,9 @@
                     <h3>Contato</h3>
                     <ul class="footer-links">
                         <li><i class="fas fa-envelope"></i> contato@djvandy.com</li>
-                        <li><i class="fas fa-phone"></i> (14) 99101-4086</li>
-                        <li><i class="fab fa-whatsapp"></i> (14) 99101-4086</li>
-                        <li><i class="fas fa-map-marker-alt"></i> São Manuel, Brasil</li>
+                        <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+                        <li><i class="fab fa-whatsapp"></i> (11) 99999-9999</li>
+                        <li><i class="fas fa-map-marker-alt"></i> São Paulo, Brasil</li>
                     </ul>
                 </div>
             </div>
@@ -1769,14 +1778,6 @@
             </div>
         </div>
     </footer>
-
-    <!-- Botão flutuante do WhatsApp -->
-    <a href="https://wa.me/5514991014086"
-       class="whatsapp-float"
-       target="_blank"
-       aria-label="Converse conosco no WhatsApp">
-      <img src="whats.png" alt="WhatsApp" />
-    </a>
 
     <script>
         // Menu mobile toggle
@@ -2073,35 +2074,6 @@
         // Configurar volume inicial
         audio.volume = 0.7;
         volumeProgress.style.width = '70%';
-
-        // Bloquear menu de contexto (botão direito)
-        document.addEventListener('contextmenu', function(e) {
-            e.preventDefault();
-        });
-
-        // Bloquear algumas teclas (F12, Ctrl+Shift+I, Ctrl+Shift+J, Ctrl+U)
-        document.addEventListener('keydown', function(e) {
-            // F12
-            if (e.keyCode === 123) {
-                e.preventDefault();
-                return false;
-            }
-            // Ctrl+Shift+I
-            if (e.ctrlKey && e.shiftKey && e.keyCode === 73) {
-                e.preventDefault();
-                return false;
-            }
-            // Ctrl+Shift+J
-            if (e.ctrlKey && e.shiftKey && e.keyCode === 74) {
-                e.preventDefault();
-                return false;
-            }
-            // Ctrl+U
-            if (e.ctrlKey && e.keyCode === 85) {
-                e.preventDefault();
-                return false;
-            }
-        });
     </script>
 </body>
 </html>
